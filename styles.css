@@ -82,10 +82,7 @@ body {
     width: 18px;
     height: 18px;
     padding: 9px;
-    /* border: 1px solid yellow; */
-    border-width: 1px;
-    border-style: solid;
-    border-image: linear-gradient(to right, hsl(192, 100%, 67%),  hsl(280, 87%, 65%)) 1, 100%;
+    border: 1px solid hsl(192, 100%, 67%);
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -96,6 +93,7 @@ body {
 .card {
     background-color: hsl(235, 24%, 19%);
     border-radius: 4px;
+    filter: drop-shadow(1px 1px 8px hsl(235, 21%, 11%));
 }
 
 .check {
@@ -107,10 +105,12 @@ body {
     width: 15px;
     display: none;
     cursor: pointer;
+    transition: all .4s ease;
 }
 
 .todo:hover .cross {
-    display: block
+    display: block;
+    transition: all .4s ease;
 }
 
 .todo {
@@ -151,4 +151,13 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.menus > span:nth-child(2) > p.active {
+    color: hsl(220, 98%, 61%);
+}
+
+.menus > span:nth-child(2) > p:hover, .menus > span:nth-child(3) > p:hover {
+    color: hsl(236, 33%, 92%);
+    transition: all .4s ease;    
 }
